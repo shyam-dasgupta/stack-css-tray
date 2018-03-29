@@ -1,0 +1,116 @@
+.stack-tray-left, .stack-tray-right, .stack-tray-top, .stack-tray-bottom {
+    z-index: 1;
+}
+.stack-tray-left {
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.3);
+}
+.stack-tray-right {
+    box-shadow: -2px 0 4px rgba(0, 0, 0, 0.3);
+}
+.stack-tray-top {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+.stack-tray-bottom {
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3);
+}
+.stack-tray-minimizer {
+    position: absolute;
+    background-color: #ffffff;
+    z-index: 2;
+    cursor: pointer;
+    overflow: hidden;
+}
+.stack-tray-left > .stack-tray-minimizer, .stack-tray-right > .stack-tray-minimizer {
+    height: 20px;
+    width: 10px;
+}
+.stack-tray-left > .stack-tray-minimizer {
+    left: 100%;
+    top: 4px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.stack-tray-right > .stack-tray-minimizer {
+    right: 100%;
+    bottom: 4px;
+    box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.3);
+}
+.stack-tray-top > .stack-tray-minimizer, .stack-tray-bottom > .stack-tray-minimizer {
+    height: 10px;
+    width: 20px;
+}
+.stack-tray-top > .stack-tray-minimizer {
+    top: 100%;
+    right: 4px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.stack-tray-bottom > .stack-tray-minimizer {
+    bottom: 100%;
+    left: 4px;
+    box-shadow: 2px -2px 4px rgba(0, 0, 0, 0.3);
+}
+.stack-tray-minimizer:before {
+    position: absolute;
+    content: "";
+    height: 0;
+    width: 0;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.stack-tray-left > .stack-tray-minimizer:before, .stack-tray-right > .stack-tray-minimizer:before {
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #2f2f2f;
+    margin-top: 5px;
+    margin-left: 2px;
+}
+.stack-tray-top > .stack-tray-minimizer:before, .stack-tray-bottom > .stack-tray-minimizer:before {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #2f2f2f;
+    margin-top: 2px;
+    margin-left: 5px;
+}
+.stack-tray-left > .stack-tray-minimizer:before, .stack-tray-right > .stack-tray-minimizer.flip:before {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.stack-tray-left > .stack-tray-minimizer.flip:before, .stack-tray-right > .stack-tray-minimizer:before {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+.stack-tray-top > .stack-tray-minimizer:before, .stack-tray-bottom > .stack-tray-minimizer.flip:before {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+.stack-tray-top > .stack-tray-minimizer.flip:before, .stack-tray-bottom > .stack-tray-minimizer:before {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.stack-tray-resizer {
+    position: absolute;
+    background: transparent;
+    z-index: 2;
+}
+.stack-tray-left > .stack-tray-resizer, .stack-tray-right > .stack-tray-resizer {
+    width: 8px;
+    height: 100%;
+    cursor: col-resize;
+}
+.stack-tray-left > .stack-tray-resizer {
+    right: -4px;
+}
+.stack-tray-right > .stack-tray-resizer {
+    left: -4px;
+}
+.stack-tray-top > .stack-tray-resizer, .stack-tray-bottom > .stack-tray-resizer {
+    width: 100%;
+    height: 8px;
+    cursor: row-resize
+}
+.stack-tray-bottom > .stack-tray-resizer {
+    top: -4px;
+}
+.stack-tray-top > .stack-tray-resizer {
+    bottom: -4px;
+}
